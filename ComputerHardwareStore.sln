@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore", "ComputerHardwareStore\ComputerHardwareStore.csproj", "{2E85CAEC-BD8E-41E1-852B-6AF52C0C4F5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.Domain", "ComputerHardwareStore.Domain\ComputerHardwareStore.Domain.csproj", "{A52ED17B-0CF6-4B06-8E8D-18E27253B97A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.DB", "ComputerHardwareStore.DB\ComputerHardwareStore.DB.csproj", "{EEF78ACF-C5F0-4024-A0B7-9CC445572923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{2E85CAEC-BD8E-41E1-852B-6AF52C0C4F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E85CAEC-BD8E-41E1-852B-6AF52C0C4F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E85CAEC-BD8E-41E1-852B-6AF52C0C4F5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52ED17B-0CF6-4B06-8E8D-18E27253B97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52ED17B-0CF6-4B06-8E8D-18E27253B97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52ED17B-0CF6-4B06-8E8D-18E27253B97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52ED17B-0CF6-4B06-8E8D-18E27253B97A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF78ACF-C5F0-4024-A0B7-9CC445572923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF78ACF-C5F0-4024-A0B7-9CC445572923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF78ACF-C5F0-4024-A0B7-9CC445572923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF78ACF-C5F0-4024-A0B7-9CC445572923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
