@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ComputerHardwareStore.DB\ComputerHardwareStore.DB.csproj" />
       <ProjectReference Include="..\ComputerHardwareStore.Domain\ComputerHardwareStore.Domain.csproj" />
     </ItemGroup>
 

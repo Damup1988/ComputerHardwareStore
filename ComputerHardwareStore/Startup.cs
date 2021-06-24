@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ComputerHardwareStore.BusinessLogic;
+using ComputerHardwareStore.DB;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,9 @@ namespace ComputerHardwareStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IItemService, ItemService>();
+            //services.AddScoped<IItemRepository, ItemRepositoryTest>();
+            services.AddScoped<IItemRepository, ItemRepositoryDb>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
