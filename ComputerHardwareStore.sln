@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.DB", "ComputerHardwareStore.DB\ComputerHardwareStore.DB.csproj", "{EEF78ACF-C5F0-4024-A0B7-9CC445572923}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.BusinessLogic", "ComputerHardwareStore.BusinessLogic\ComputerHardwareStore.BusinessLogic.csproj", "{6579A1DA-D50D-4809-B828-5F4930F37EE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{EEF78ACF-C5F0-4024-A0B7-9CC445572923}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEF78ACF-C5F0-4024-A0B7-9CC445572923}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEF78ACF-C5F0-4024-A0B7-9CC445572923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6579A1DA-D50D-4809-B828-5F4930F37EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6579A1DA-D50D-4809-B828-5F4930F37EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6579A1DA-D50D-4809-B828-5F4930F37EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6579A1DA-D50D-4809-B828-5F4930F37EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
