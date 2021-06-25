@@ -10,6 +10,6 @@ namespace ComputerHardwareStore.BusinessLogic
         Item GetItemById(Guid id);
         void CreateItem(Item item);
         void UpdateItem(Item item);
-        void DeleteItem(Item item);
+        void DeleteItem(Guid id);
     }
 }

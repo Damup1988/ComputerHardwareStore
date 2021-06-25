@@ -18,7 +18,6 @@ namespace ComputerHardwareStore.Domain
         public string Type { get; set; }
         [Required]
         public int Quantity { get; set; }
-        public bool IsAvailable => Quantity > 0;
         [Required]
         [MaxLength(100)]
         public string ShortDescription { get; set; }

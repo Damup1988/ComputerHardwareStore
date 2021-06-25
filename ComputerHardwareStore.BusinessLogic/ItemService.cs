@@ -21,12 +21,13 @@ namespace ComputerHardwareStore.BusinessLogic
 
         public Item GetItemById(Guid id)
         {
-            throw new NotImplementedException();
+            return _repository.GetItemById(id);
         }
 
         public void CreateItem(Item item)
         {
-            throw new NotImplementedException();
+            _repository.CreateItem(item);
+            _repository.SaveChangesFunc();
         }
 
         public void UpdateItem(Item item)
@@ -34,9 +35,10 @@ namespace ComputerHardwareStore.BusinessLogic
             throw new NotImplementedException();
         }
 
-        public void DeleteItem(Item item)
+        public void DeleteItem(Guid id)
         {
-            throw new NotImplementedException();
+            _repository.DeleteItem(id);
+            _repository.SaveChangesFunc();
         }
     }
 }

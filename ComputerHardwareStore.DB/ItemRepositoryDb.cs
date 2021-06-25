@@ -14,6 +14,12 @@ namespace ComputerHardwareStore.DB
         {
             _itemContext = itemContext;
         }
+
+        public bool SaveChangesFunc()
+        {
+            return (_itemContext.SaveChanges() >= 0);
+        }
+
         public IEnumerable<Item> GetAllItems()
         {
             return _itemContext.Items.ToList();
@@ -21,12 +27,12 @@ namespace ComputerHardwareStore.DB
 
         public Item GetItemById(Guid id)
         {
-            throw new NotImplementedException();
+            return _itemContext.Items.FirstOrDefault(p => p.Id == id);
         }
 
         public void CreateItem(Item item)
         {
-            throw new NotImplementedException();
+            _itemContext.Items.Add(item);
         }
 
         public void UpdateItem(Item item)
@@ -34,9 +40,17 @@ namespace ComputerHardwareStore.DB
             throw new NotImplementedException();
         }
 
-        public void DeleteItem(Item item)
+        public void DeleteItem(Guid id)
         {
-            throw new NotImplementedException();
+            var item = GetItemById(id);
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+            else
+            {
+                _itemContext.Items.Remove(item);
+            }
         }
     }
 }

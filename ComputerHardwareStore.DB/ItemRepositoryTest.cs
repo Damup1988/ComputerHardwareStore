@@ -6,6 +6,11 @@ namespace ComputerHardwareStore.DB
 {
     public class ItemRepositoryTest : IItemRepository
     {
+        public bool SaveChangesFunc()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Item> GetAllItems()
         {
             var items = new List<Item>
@@ -58,6 +63,11 @@ namespace ComputerHardwareStore.DB
         }
 
         public void UpdateItem(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteItem(Guid id)
         {
             throw new NotImplementedException();
         }
