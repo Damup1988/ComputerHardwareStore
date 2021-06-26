@@ -71,10 +71,5 @@ namespace ComputerHardwareStore.DB
         {
             throw new NotImplementedException();
         }
-
-        public void DeleteItem(Item item)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

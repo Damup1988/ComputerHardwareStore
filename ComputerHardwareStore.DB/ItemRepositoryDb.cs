@@ -32,25 +32,21 @@ namespace ComputerHardwareStore.DB
 
         public void CreateItem(Item item)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
             _itemContext.Items.Add(item);
         }
 
         public void UpdateItem(Item item)
         {
-            throw new NotImplementedException();
+            _itemContext.Items.Update(item);
         }
 
         public void DeleteItem(Guid id)
         {
-            var item = GetItemById(id);
-            if (item == null)
-            {
-                throw new ArgumentNullException(nameof(item));
-            }
-            else
-            {
-                _itemContext.Items.Remove(item);
-            }
+            _itemContext.Items.Remove(GetItemById(id));
         }
     }
 }

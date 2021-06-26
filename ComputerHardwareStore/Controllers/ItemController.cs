@@ -1,6 +1,7 @@
 ﻿using System;
 using ComputerHardwareStore.BusinessLogic;
 using ComputerHardwareStore.Domain;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputerHardwareStore.Controllers
@@ -31,7 +32,7 @@ namespace ComputerHardwareStore.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetItemById")]
         public ActionResult<Item> GetItemById(Guid id)
         {
             var item = _itemService.GetItemById(id);
@@ -47,7 +48,32 @@ namespace ComputerHardwareStore.Controllers
         public ActionResult<Item> CreateItem(Item item)
         {
             _itemService.CreateItem(item);
-            return Ok(item);
+            return CreatedAtRoute(nameof(GetItemById), new {item.Id}, item);
+            //return Ok(item);
+        }
+        
+        /// <summary>
+        /// UPDATE
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public ActionResult UpdateItem(Item item)
+        {
+            if (_itemService.UpdateItem(item)) return NoContent();
+            else return NotFound();
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult PartialUpdateItem(Guid id, JsonPatchDocument<Item> patchDoc)
+        {
+            var itemFromDb = _itemService.GetItemById(id);
+            if (itemFromDb == null) return NotFound();
+            
+            patchDoc.ApplyTo(itemFromDb, ModelState);
+            if (!TryValidateModel(itemFromDb)) return ValidationProblem(ModelState);
+            _itemService.UpdateItem(itemFromDb);
+            return NoContent();
         }
         
         /// <summary>
@@ -58,16 +84,8 @@ namespace ComputerHardwareStore.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteItem(Guid id)
         {
-            var item = _itemService.GetItemById(id);
-            if (item == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                _itemService.DeleteItem(id);
-                return NoContent();
-            }
+            if (_itemService.DeleteItem(id)) return NoContent();
+            else return NotFound();
         }
     }
 }

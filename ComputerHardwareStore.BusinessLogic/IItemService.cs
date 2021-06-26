@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using ComputerHardwareStore.Domain;
+using Microsoft.AspNetCore.JsonPatch;
+using Newtonsoft.Json.Serialization;
 
 namespace ComputerHardwareStore.BusinessLogic
 {
@@ -9,7 +11,7 @@ namespace ComputerHardwareStore.BusinessLogic
         IEnumerable<Item> GetAllItems();
         Item GetItemById(Guid id);
         void CreateItem(Item item);
-        void UpdateItem(Item item);
-        void DeleteItem(Guid id);
+        bool UpdateItem(Item item);
+        bool DeleteItem(Guid id);
     }
 }

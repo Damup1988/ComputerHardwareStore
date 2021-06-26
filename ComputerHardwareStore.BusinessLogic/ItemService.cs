@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using AutoMapper;
 using ComputerHardwareStore.DB;
 using ComputerHardwareStore.Domain;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ComputerHardwareStore.BusinessLogic
 {
@@ -34,15 +37,27 @@ namespace ComputerHardwareStore.BusinessLogic
             _repository.SaveChangesFunc();
         }
 
-        public void UpdateItem(Item item)
+        public bool UpdateItem(Item item)
         {
-            throw new NotImplementedException();
+            if (GetItemById(item.Id) != null)
+            {
+                _repository.UpdateItem(item);
+                _repository.SaveChangesFunc();
+                return true;
+            }
+            else return false;
         }
 
-        public void DeleteItem(Guid id)
+        public bool DeleteItem(Guid id)
         {
-            _repository.DeleteItem(id);
-            _repository.SaveChangesFunc();
+            var item = GetItemById(id);
+            if (item != null)
+            {
+                _repository.DeleteItem(id);
+                _repository.SaveChangesFunc();
+                return true;
+            }
+            else return false;
         }
     }
 }
