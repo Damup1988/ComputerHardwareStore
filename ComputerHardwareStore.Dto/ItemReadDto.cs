@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ComputerHardwareStore.Domain
+namespace ComputerHardwareStore.Dto
 {
-    public class Item
+    public class ItemReadDto
     {
         [Key]
         public Guid Id { get; set; }
@@ -24,8 +24,6 @@ namespace ComputerHardwareStore.Domain
         [Required]
         [MaxLength(200)]
         public string Description { get; set; }
-        [Required]
-        public decimal Price { get; set; }
         [Required]
         public decimal RetailPrice { get; set; }
     }

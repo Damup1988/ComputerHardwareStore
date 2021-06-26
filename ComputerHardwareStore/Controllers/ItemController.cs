@@ -27,14 +27,15 @@ namespace ComputerHardwareStore.Controllers
         }
         
         /// <summary>
-        /// GET
+        /// GET by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public ActionResult<Item> GetItemById(Guid id)
         {
-            return Ok(_itemService.GetItemById(id));
+            var item = _itemService.GetItemById(id);
+            return item != null ? Ok(item) : NotFound();
         }
         
         /// <summary>

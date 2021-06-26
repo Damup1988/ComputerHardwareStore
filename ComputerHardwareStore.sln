@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.DB", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.BusinessLogic", "ComputerHardwareStore.BusinessLogic\ComputerHardwareStore.BusinessLogic.csproj", "{6579A1DA-D50D-4809-B828-5F4930F37EE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.Dto", "ComputerHardwareStore.Dto\ComputerHardwareStore.Dto.csproj", "{7994B6D2-FB14-4926-A5A7-8EB3FBDD9A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerHardwareStore.Profiles", "ComputerHardwareStore.Profiles\ComputerHardwareStore.Profiles.csproj", "{9FF99D5A-8B31-4889-913D-3093BD86D001}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{6579A1DA-D50D-4809-B828-5F4930F37EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6579A1DA-D50D-4809-B828-5F4930F37EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6579A1DA-D50D-4809-B828-5F4930F37EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7994B6D2-FB14-4926-A5A7-8EB3FBDD9A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7994B6D2-FB14-4926-A5A7-8EB3FBDD9A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7994B6D2-FB14-4926-A5A7-8EB3FBDD9A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7994B6D2-FB14-4926-A5A7-8EB3FBDD9A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF99D5A-8B31-4889-913D-3093BD86D001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF99D5A-8B31-4889-913D-3093BD86D001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF99D5A-8B31-4889-913D-3093BD86D001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF99D5A-8B31-4889-913D-3093BD86D001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
