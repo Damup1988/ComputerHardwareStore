@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ComputerHardwareStore.BusinessLogic;
 using ComputerHardwareStore.DB;
+using ComputerHardwareStore.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,8 +36,12 @@ namespace ComputerHardwareStore
                 (Configuration.GetConnectionString("ItemDbConnection"),
                 b => b.MigrationsAssembly("ComputerHardwareStore")));
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<ISupplierService, SupplierService>();
+            services.AddDbContext<SupplierContext>(options => options.UseNpgsql
+                (Configuration.GetConnectionString("SupplierDbConnection")));
             //services.AddScoped<IItemRepository, ItemRepositoryTest>();
             services.AddScoped<IItemRepository, ItemRepositoryDb>();
+            services.AddScoped<ISupplierRepository, SupplierRepositoryDb>();
             services.AddControllers().AddNewtonsoftJson
                 (s =>
             {
