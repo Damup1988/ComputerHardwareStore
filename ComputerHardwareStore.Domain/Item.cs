@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using ComputerHardwareStore.Domain.Enums;
 
 namespace ComputerHardwareStore.Domain
 {
@@ -15,7 +17,7 @@ namespace ComputerHardwareStore.Domain
         public string Vendor { get; set; }
         [Required]
         [MaxLength(100)]
-        public string Type { get; set; }
+        public ItemType Type { get; set; }
         [Required]
         public int Quantity { get; set; }
         [Required]
@@ -28,5 +30,6 @@ namespace ComputerHardwareStore.Domain
         public decimal Price { get; set; }
         [Required]
         public decimal RetailPrice { get; set; }
+        public Dictionary<string, string> ItemProperties { get; set; }
     }
 }

@@ -9,7 +9,9 @@ namespace ComputerHardwareStore.Profiles
     {
         public ItemProfile()
         {
+            //Source -> Destination
             CreateMap<Item, ItemReadDto>();
+            //CreateMap<ItemCreateDto, Item>();
         }
     }
 }

@@ -2,22 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using ComputerHardwareStore.Domain;
-using Microsoft.EntityFrameworkCore;
 
-namespace ComputerHardwareStore.DB
+namespace ComputerHardwareStore.DB.Items
 {
-    public class ItemRepositoryDb : IItemRepository
+    public class ItemRepository : IItemRepository
     {
         private readonly ItemContext _itemContext;
 
-        public ItemRepositoryDb(ItemContext itemContext)
+        public ItemRepository(ItemContext itemContext)
         {
             _itemContext = itemContext;
-        }
-
-        public bool SaveChangesFunc()
-        {
-            return (_itemContext.SaveChanges() >= 0);
         }
 
         public IEnumerable<Item> GetAllItems()
@@ -37,16 +31,19 @@ namespace ComputerHardwareStore.DB
                 throw new ArgumentNullException(nameof(item));
             }
             _itemContext.Items.Add(item);
+            _itemContext.SaveChanges();
         }
 
         public void UpdateItem(Item item)
         {
             _itemContext.Items.Update(item);
+            _itemContext.SaveChanges();
         }
 
         public void DeleteItem(Guid id)
         {
             _itemContext.Items.Remove(GetItemById(id));
+            _itemContext.SaveChanges();
         }
     }
 }

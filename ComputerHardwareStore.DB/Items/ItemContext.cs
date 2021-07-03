@@ -1,7 +1,7 @@
 ﻿using ComputerHardwareStore.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace ComputerHardwareStore.DB
+namespace ComputerHardwareStore.DB.Items
 {
     public class ItemContext : DbContext
     {

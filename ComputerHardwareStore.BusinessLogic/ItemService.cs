@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using AutoMapper;
 using ComputerHardwareStore.DB;
+using ComputerHardwareStore.DB.Items;
 using ComputerHardwareStore.Domain;
+using ComputerHardwareStore.Domain.Enums;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -34,7 +36,6 @@ namespace ComputerHardwareStore.BusinessLogic
         public void CreateItem(Item item)
         {
             _repository.CreateItem(item);
-            _repository.SaveChangesFunc();
         }
 
         public bool UpdateItem(Item item)
@@ -42,7 +43,6 @@ namespace ComputerHardwareStore.BusinessLogic
             if (GetItemById(item.Id) != null)
             {
                 _repository.UpdateItem(item);
-                _repository.SaveChangesFunc();
                 return true;
             }
             else return false;
@@ -54,10 +54,15 @@ namespace ComputerHardwareStore.BusinessLogic
             if (item != null)
             {
                 _repository.DeleteItem(id);
-                _repository.SaveChangesFunc();
                 return true;
             }
             else return false;
+        }
+
+        private bool VeriftItemProperties(Dictionary<string, string> itemProperties, ItemType itemType)
+        {
+            
+            return false;
         }
     }
 }
